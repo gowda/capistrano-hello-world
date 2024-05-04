@@ -24,4 +24,4 @@ set :ssh_options, {
 set :default_env, { RAILS_MASTER_KEY: ENV.fetch('RAILS_MASTER_KEY') }
 set :systemctl_user, :system
 
-before "puma:restart", "services:link"
+before 'puma:restart', 'services:link'
