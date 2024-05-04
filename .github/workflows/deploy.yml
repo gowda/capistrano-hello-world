@@ -27,3 +27,7 @@ jobs:
           chmod 0600 ${{ secrets.CAP_DEPLOY_KEY_PATH }}
       - name: Deploy using capistrano
         run: bin/cap ${{ secrets.TARGET_ENVIRONMENT }} deploy
+        env:
+          CAP_DEPLOY_SERVER: ${{ secrets.CAP_DEPLOY_SERVER }}
+          CAP_DEPLOY_USER: ${{ secrets.CAP_DEPLOY_USER }}
+          CAP_DEPLOY_KEY_PATH: ${{ secrets.CAP_DEPLOY_KEY_PATH }}
