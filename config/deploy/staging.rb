@@ -21,7 +21,7 @@ set :ssh_options, {
   auth_methods: ['publickey']
 }
 
-set :default_env, { RAILS_MASTER_KEY: ENV.fetch('RAILS_MASTER_KEY') }
+set :default_env, { RAILS_ENV: 'production', RAILS_MASTER_KEY: ENV.fetch('RAILS_MASTER_KEY') }
 set :systemctl_user, :system
 
 before 'puma:restart', 'services:link'
