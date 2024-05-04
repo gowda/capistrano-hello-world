@@ -1,0 +1,25 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_DEPLOY_MASTER_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Ruby 3.2.2
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.2
+          bundler-cache: true
+      - name: Setup deploy key
+        run: |
+          aws s3 cp s3://${{ secrets.SSH_KEY_S3_BUCKET }}/${{ secrets.SSH_KEY_S3_OBJECT_KEY }} ${{ secrets.CAP_DEPLOY_KEY_PATH }}
+          chmod 0600 ${{ secrets.CAP_DEPLOY_KEY_PATH }}
+      - name: Deploy using capistrano
+        run: bin/cap ${{ secrets.TARGET_ENVIRONMENT }} deploy
