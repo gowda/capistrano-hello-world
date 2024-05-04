@@ -9,5 +9,4 @@ set :application, 'hello-world'
 set :repo_url, 'https://github.com/gowda/capistrano-hello-world.git'
 set :branch, 'main'
 
-# Same as default
-set :deploy_to, "/var/www/#{fetch(:application)}"
+set :deploy_to, "#{ENV.fetch('CAP_HOME')}/#{fetch(:application)}"

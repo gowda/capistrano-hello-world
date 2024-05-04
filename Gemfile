@@ -20,7 +20,6 @@ end
 group :development do
   gem 'capistrano', '~> 3.10', require: false
   gem 'capistrano-rails', '~> 1.3', require: false
-  gem 'capistrano-rvm', '~> 0.1.0', require: false
   gem 'dotenv', '~> 3.1.0'
   gem 'rubocop', '~> 1.63.0', require: false
   gem 'rubocop-rails', '~> 2.24.0', require: false

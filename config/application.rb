@@ -31,5 +31,7 @@ module HelloWorld
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.credentials.require_master_key = true
   end
 end
