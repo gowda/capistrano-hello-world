@@ -20,3 +20,5 @@ set :ssh_options, {
   forward_agent: false,
   auth_methods: ['publickey']
 }
+
+set :default_env, { RAILS_MASTER_KEY: ENV.fetch('RAILS_MASTER_KEY') }
