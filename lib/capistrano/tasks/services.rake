@@ -6,7 +6,7 @@ namespace :services do
     source_file = "#{current_path}/systemd/#{fetch(:application)}_puma.service"
     target_file = "/etc/systemd/system/#{fetch(:application)}_puma_#{fetch(:stage)}.service"
 
-    sh "sudo rm #{target_file}"
+    sh "sudo rm -f #{target_file}"
     sh "sudo ln -s #{source_file} #{target_file}"
   end
 end
