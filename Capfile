@@ -12,6 +12,8 @@ install_plugin Capistrano::SCM::Git
 require 'capistrano/rails/assets'
 
 require 'capistrano/puma'
+
+require 'pry'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Systemd
 
