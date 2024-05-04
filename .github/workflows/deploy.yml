@@ -31,3 +31,4 @@ jobs:
           CAP_DEPLOY_SERVER: ${{ secrets.CAP_DEPLOY_SERVER }}
           CAP_DEPLOY_USER: ${{ secrets.CAP_DEPLOY_USER }}
           CAP_DEPLOY_KEY_PATH: ${{ secrets.CAP_DEPLOY_KEY_PATH }}
+          CAP_HOME: ${{ secrets.CAP_HOME }}
