@@ -7,7 +7,7 @@ Type=simple
 User=shiva
 WorkingDirectory=/var/kailasa/hello-world/current
 ExecStart=bundle exec puma -C /var/kailasa/hello-world/current/config/puma.rb
-ExecStop=bundle exec pumactl -S /var/kailasa/hello-world/shared/tmp/pids/puma.state stop
+ExecStop=bundle exec pumactl -S /var/kailasa/hello-world/current/tmp/pids/puma.state stop
 TimeoutSec=15
 Restart=always
 
