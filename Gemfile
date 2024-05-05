@@ -11,7 +11,6 @@ gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
-gem 'turbo-rails'
 
 group :development, :test do
   gem 'debug', platforms: [:mri, :windows]

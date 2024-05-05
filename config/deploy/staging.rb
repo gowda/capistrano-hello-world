@@ -24,10 +24,10 @@ set :ssh_options, {
 set :rails_env, 'production'
 set :default_env, { RAILS_MASTER_KEY: ENV.fetch('RAILS_MASTER_KEY'), RAILS_PRODUCTION_HOST: ENV.fetch('RAILS_PRODUCTION_HOST') }
 set :systemctl_user, :system
-set :puma_service_unit_env_vars, %w[
-  RAILS_ENV=production
-  RAILS_MASTER_KEY=#{ENV.fetch('RAILS_MASTER_KEY')}
-  RAILS_PRODUCTION_HOST=#{ENV.fetch('RAILS_PRODUCTION_HOST')}
+set :puma_service_unit_env_vars, [
+  'RAILS_ENV=production',
+  "RAILS_MASTER_KEY=#{ENV.fetch('RAILS_MASTER_KEY')}",
+  "RAILS_PRODUCTION_HOST=#{ENV.fetch('RAILS_PRODUCTION_HOST')}"
 ]
 
 before 'puma:restart', 'services:link'
