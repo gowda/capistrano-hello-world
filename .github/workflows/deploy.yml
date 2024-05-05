@@ -33,3 +33,4 @@ jobs:
           CAP_DEPLOY_KEY_PATH: ${{ secrets.CAP_DEPLOY_KEY_PATH }}
           CAP_HOME: ${{ secrets.CAP_HOME }}
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          RAILS_PRODUCTION_HOST: ${{ secrets.RAILS_PRODUCTION_HOST }}
