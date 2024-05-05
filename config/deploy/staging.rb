@@ -30,4 +30,4 @@ set :puma_service_unit_env_vars, [
   "RAILS_PRODUCTION_HOST=#{ENV.fetch('RAILS_PRODUCTION_HOST')}"
 ]
 
-before 'puma:restart', 'services:link'
+before 'puma:restart', 'puma:install'
